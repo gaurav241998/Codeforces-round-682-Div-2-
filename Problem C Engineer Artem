@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std;
+void solve()
+{
+ int n,m;
+ scanf("%d%d",&n,&m);
+ int A[101][101];
+ for(int i=1;i<=n;i++)
+ {
+   for(int j=1;j<=m;j++)
+   {
+     scanf("%d",&A[i][j]);
+   }
+ }
+  for(int i=1;i<=n;i++)
+ {
+   for(int j=1;j<=m;j++)
+   {
+     if(i%2!=0 && j%2 == 0)
+     {
+       if(A[i][j]%2!=0)
+       {
+         A[i][j]++;
+       }
+     }
+     else if(i%2==0 && j%2 != 0)
+     {
+       if(A[i][j]%2!=0)
+       {
+         A[i][j]++;
+       }
+     }
+     else 
+     {
+       if(A[i][j]%2 == 0)
+       {
+         A[i][j]++;
+       }
+     }
+   }
+ }
+ for(int i=1;i<=n;i++)
+ {
+   for(int j=1;j<=m;j++)
+   {
+     printf("%d ",A[i][j]);
+   }
+   printf("\n");
+ }
+}
+int main()
+{
+  int T;
+  scanf("%d",&T);
+  while(T--)
+  {
+    solve();
+  }
+  return 0;
+}
